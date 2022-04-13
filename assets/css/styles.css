@@ -697,3 +697,23 @@
     animation-direction: normal;
     animation-timing-function: ease;
 }
+
+.back-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+
+    z-index: -1;
+}
+
+.temporal {
+    margin: auto;
+
+    font-family: font-2;
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+}
