@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-background-color: #111111;
+    --background-color: #222222;
+    --background-color2: #dddddd;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: var(--dark-background-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* COLUMNS FROM 1 TO 12 */
+
+.col-1 {
+    width: calc( 100% / 12 );
+}
+
+.col-2 {
+    width: calc( 200% / 12 );
+}
+
+.col-3 {
+    width: calc( 300% / 12 );
+}
+
+.col-4 {
+    width: calc( 400% / 12 );
+}
+
+.col-5 {
+    width: calc( 500% / 12 );
+}
+
+.col-6 {
+    width: calc( 600% / 12 );
+}
+
+.col-7 {
+    width: calc( 700% / 12 );
+}
+
+.col-8 {
+    width: calc( 800% / 12 );
+}
+
+.col-9 {
+    width: calc( 900% / 12 );
+}
+
+.col-10 {
+    width: calc( 1000% / 12 );
+}
+
+.col-11 {
+    width: calc( 1100% / 12 );
+}
+
+.col-12 {
+    width: calc( 1200% / 12 );
+}
+
+.height-100vh {
+    height: 100vh;
+}
+
+.height-100 {
+    height: 100%;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+
+    display: flex;
+}
+
+.circle-shape {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
+
+.justify-content-space-around {
+    justify-content: space-around;
+}
+
+.margin-auto {
+    margin: auto;
+}
+
+.bg-white{
+    background-color: white;
+}

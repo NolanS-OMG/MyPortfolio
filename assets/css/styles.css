@@ -1,0 +1,699 @@
+:root {
+    --dark-background-color: #111111;
+    --background-color: #222222;
+    --oposite-background-color: #dddddd;
+}
+
+@font-face {
+    font-family: font-1;
+    src: url('../fonts/LEMONMILK-Bold.otf');
+}
+
+@font-face {
+    font-family: font-2;
+    src: url('../fonts/LEMONMILK-Medium.otf');
+}
+
+/* HEADER */
+
+.header {
+    position: relative;
+    background-color: var(--background-color);
+}
+
+/* ANIMATED BACKGROUND BUBBLES */
+
+/* Bubbles movement */
+@keyframes bubbles-animation {
+    0% {
+        bottom: 0vh;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    100% {
+        bottom: 100vh;
+        opacity: 0;
+    }
+}
+
+.bubbles-container {
+    background-color: var(--background-color);
+}
+
+/* All bubbles */
+.bubble {
+    width: 5vw;
+    height: 5vw;
+    background-color: #fff;
+
+    opacity: 0;
+    
+    position: absolute;
+    bottom: 0;
+
+    animation-name: bubbles-animation;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+}
+
+.bubble:nth-child(1) {
+    left: calc( 0*10vw + 2.5vw );
+}
+.bubble:nth-child(2) {
+    left: calc( 1*10vw + 2.5vw );
+}
+.bubble:nth-child(3) {
+    left: calc( 2*10vw + 2.5vw );
+}
+.bubble:nth-child(4) {
+    left: calc( 3*10vw + 2.5vw );
+}
+.bubble:nth-child(5) {
+    left: calc( 4*10vw + 2.5vw );
+}
+.bubble:nth-child(6) {
+    left: calc( 5*10vw + 2.5vw );
+}
+.bubble:nth-child(7) {
+    left: calc( 6*10vw + 2.5vw );
+}
+.bubble:nth-child(8) {
+    left: calc( 7*10vw + 2.5vw );
+}
+.bubble:nth-child(9) {
+    left: calc( 8*10vw + 2.5vw );
+}
+.bubble:nth-child(10) {
+    left: calc( 9*10vw + 2.5vw );
+}
+
+.bubble:nth-child(11) {
+    left: calc( 0*10vw + 2.5vw );
+}
+.bubble:nth-child(12) {
+    left: calc( 1*10vw + 2.5vw );
+}
+.bubble:nth-child(13) {
+    left: calc( 2*10vw + 2.5vw );
+}
+.bubble:nth-child(14) {
+    left: calc( 3*10vw + 2.5vw );
+}
+.bubble:nth-child(15) {
+    left: calc( 4*10vw + 2.5vw );
+}
+.bubble:nth-child(16) {
+    left: calc( 5*10vw + 2.5vw );
+}
+.bubble:nth-child(17) {
+    left: calc( 6*10vw + 2.5vw );
+}
+.bubble:nth-child(18) {
+    left: calc( 7*10vw + 2.5vw );
+}
+.bubble:nth-child(19) {
+    left: calc( 8*10vw + 2.5vw );
+}
+.bubble:nth-child(20) {
+    left: calc( 9*10vw + 2.5vw );
+}
+
+@keyframes bubble-deforming {
+    0% {
+        border-radius: 42% 56% 52% 51% / 41% 45% 48% 46%;
+    }
+    100% {
+        border-radius: 58% 44% 48% 49% / 59% 55% 52% 54%;
+    }
+}
+
+/* POKEDEX BUBBLE */
+/* ALL BUBBLES CONFIGURATION */
+.select-bubble {
+    position: absolute;
+    top: calc(34vh + 250px*0.05);
+    left: calc(2vw + 250px*0.05);
+
+    display: flex;
+
+    width: 250px;
+    height: 250px;
+
+    background-image: url('../images/pokedex-image.JPG');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 300px, 300px;
+
+    border: solid 10px white;
+    box-shadow: 0px 0px 4px 0px white;
+
+    animation-name: bubble-deforming;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    transition: all 0.2s;
+    cursor: pointer;
+
+    z-index: 1;
+}
+
+/* SIMULATOR BUBBLE */
+.select-bubble:nth-child(2) {
+    top: calc(6vh + 250px*0.05);
+    left: calc(100vw - (2vw + 250px*1.05));
+
+    background-image: url('../images/simulator-image.JPG');
+
+    z-index: 1;
+}
+
+/* TRIVIA BUBBLE */
+.select-bubble:nth-child(3) {
+    top: calc(100vh - (2vh + 250px*1.05));
+    left: calc(100vw - (20vw + 250px*1.05));
+
+    background-image: url('../images/trivia-image.JPG');
+}
+
+/* FRONT END DEVELOPER BUBBLE */
+.select-bubble:nth-child(4) {
+    top: calc(3vh + 350px*0.1);
+    left: calc(30vw + 350px*0.1);
+
+    width: 350px;
+    height: 350px;
+
+    background-image: url('../images/MyPic.jpg');
+    background-size: 450px, 450px;
+
+    cursor: unset;
+
+    z-index: 1;
+}
+
+@keyframes floating-animation {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+.download-cv {
+    position: absolute;
+    top: 100%;
+    left: calc(50% - 75px);
+
+    display: flex;
+    width: 150px;
+
+    background-color: transparent;
+    border: none;
+
+    opacity: 0;
+    transition: all 0.2s;
+
+    cursor: pointer;
+    z-index: 1;
+
+    transition: all 0.2s;
+}
+
+.download-cv div {
+    position: absolute;
+    top: calc(-50px + 0.5rem);
+    left: 0;
+
+    width: 150px;
+    height: 100px;
+
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+
+    animation-name: bubble-deforming;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    transition: all 0.2s;
+}
+
+.download-cv:hover div {
+    background-color: rgba(255,255,255,0.4);
+    box-shadow: 0 0 4px 4px rgba(255,255,255,0.25);
+}
+
+.download-cv span {
+    margin: auto;
+
+    font-family: font-2;
+    font-size: 1rem;
+    color: black;
+
+    z-index: 1;
+
+    transition: all 0.2s;
+}
+
+.download-cv:hover span {
+    font-size: 1.1rem;
+}
+
+.select-bubble:nth-child(4):hover {
+    transform: scale(1.2);
+    background-size: calc(450px/1.2), calc(450px/1.2);
+}
+
+.select-bubble:nth-child(4):hover .download-cv{
+    opacity: 1;
+    top: 68%;
+
+    animation-name: floating-animation;
+    animation-duration: 3s;
+    animation-delay: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.select-bubble:hover {
+    transform: scale(1.1);
+    background-size: calc(300px/1.1), calc(300px/1.1);
+}
+
+.bubble-cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.6);
+
+    animation-name: bubble-deforming;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.select-bubble h1{
+    margin-top: calc(50% - 1.8rem);
+    margin-left: auto;
+    margin-right: auto;
+
+    font-family: font-1;
+    font-size: 1.8rem;
+    text-align: center;
+
+    color: var(--oposite-background-color);
+
+    z-index: 1;
+    transition: all 0.2s;
+}
+
+.select-bubble:hover h1 {
+    margin-top: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.select-bubble h4{
+    margin-top: calc(50% - 1.2rem);
+    margin-left: auto;
+    margin-right: auto;
+
+    font-family: font-1;
+    font-size: 1.2rem;
+    text-align: center;
+
+    color: var(--oposite-background-color);
+
+    z-index: 1;
+    transition: all 0.2s;
+}
+
+@keyframes floating-above-bubble-title-animation {
+    0% {
+        top: -20%;
+    }
+    100% {
+        top: -18%;
+    }
+}
+
+.select-bubble h6{
+    position: absolute;
+    top: -18%;
+    left: 12.5%;
+
+    display: flex;
+    justify-content: space-around;
+
+    width: 75%;
+
+    font-family: font-2;
+    font-size: 1.2rem;
+    color: white;
+
+    animation-name: floating-above-bubble-title-animation;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes floating-each-letter-animation-1{
+    0% {
+        transform: rotate(-24deg) translateY(19px);
+    }
+    100% {
+        transform: rotate(-24deg) translateY(15px);
+    }
+}
+
+@keyframes floating-each-letter-animation-2{
+    0% {
+        transform: rotate(-18deg) translateY(11px);
+    }
+    100% {
+        transform: rotate(-19deg) translateY(7px);
+    }
+}
+
+@keyframes floating-each-letter-animation-3{
+    0% {
+        transform: rotate(-13deg) translateY(5px);
+    }
+    100% {
+        transform: rotate(-13deg) translateY(1px);
+    }
+}
+
+@keyframes floating-each-letter-animation-4{
+    0% {
+        transform: rotate(-4deg) translateY(1px);
+    }
+    100% {
+        transform: rotate(-4deg) translateY(-3px);
+    }
+}
+
+@keyframes floating-each-letter-animation-5{
+    0% {
+        transform: rotate(0deg) translateY(-1px);
+    }
+    100% {
+        transform: rotate(0deg) translateY(-5px);
+    }
+}
+
+@keyframes floating-each-letter-animation-6{
+    0% {
+        transform: rotate(9deg) translateY(1px);
+    }
+    100% {
+        transform: rotate(9deg) translateY(-3px);
+    }
+}
+
+@keyframes floating-each-letter-animation-7{
+    0% {
+        transform: rotate(16deg) translateY(5px);
+    }
+    100% {
+        transform: rotate(16deg) translateY(1px);
+    }
+}
+
+@keyframes floating-each-letter-animation-8{
+    0% {
+        transform: rotate(14deg) translateY(15px);
+    }
+    100% {
+        transform: rotate(14deg) translateY(11px);
+    }
+}
+
+@keyframes floating-each-letter-animation-9{
+    0% {
+        transform: rotate(28deg) translateY(23px);
+    }
+    100% {
+        transform: rotate(28deg) translateY(19px);
+    }
+}
+
+.select-bubble h6 span{
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.select-bubble h6 span:nth-child(1){
+    transform: rotate(-24deg) translateY(18px);
+    animation-name: floating-each-letter-animation-1;
+    animation-delay: 1s;
+}
+.select-bubble h6 span:nth-child(2){
+    transform: rotate(-19deg) translateY(10px);
+    animation-name: floating-each-letter-animation-2;
+}
+.select-bubble h6 span:nth-child(3){
+    transform: rotate(-13deg) translateY(4px);
+    animation-name: floating-each-letter-animation-3;
+    animation-delay: 2s;
+}
+.select-bubble h6 span:nth-child(4){
+    transform: rotate(-4deg) translateY(0px);
+    animation-name: floating-each-letter-animation-4;
+    animation-delay: 5s;
+}
+.select-bubble h6 span:nth-child(5){
+    transform: rotate(0deg) translateY(-2px);
+    animation-name: floating-each-letter-animation-5;
+    animation-delay: 0.5s;
+}
+.select-bubble h6 span:nth-child(6){
+    transform: rotate(9deg) translateY(0px);
+    animation-name: floating-each-letter-animation-6;
+    animation-delay: 1.2s;
+}
+.select-bubble h6 span:nth-child(7){
+    transform: rotate(16deg) translateY(4px);
+    animation-name: floating-each-letter-animation-7;
+    animation-delay: 1s;
+}
+.select-bubble h6 span:nth-child(8){
+    transform: rotate(14deg) translateY(8px);
+    color: transparent;
+}
+.select-bubble h6 span:nth-child(9){
+    transform: rotate(19deg) translateY(14px);
+    animation-name: floating-each-letter-animation-8;
+    animation-delay: 3s;
+}
+.select-bubble h6 span:nth-child(10){
+    transform: rotate(28deg) translateY(22px);
+    animation-name: floating-each-letter-animation-9;
+    animation-delay: 0.15s;
+}
+
+.nav-bar {
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2vh;
+
+    background-color: var(--background-color);
+    color: var(--oposite-background-color);
+
+    font-family: font-1;
+    font-size: 1.3rem;
+
+    z-index: 3;
+}
+
+.nav-bar h4 {
+    margin-left: 3vw;
+}
+
+.nav-bar h4 a{
+    color: var(--oposite-background-color);
+}
+
+.nav-bar ul {
+    display: flex;
+    margin-right: 3vw;
+
+    font-family: font-2;
+}
+
+.nav-bar ul li {
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.nav-bar ul li a {
+    color: var(--oposite-background-color);
+}
+
+.nav-bar-wave {
+    position: sticky;
+    top: calc(2vh + 1.85rem);
+
+    z-index: 3;
+}
+
+@keyframes nav-bar-white-wave-animation {
+    0% {
+        transform: translateX(0px);
+    }
+
+    33% {
+        transform: translateX(40px);
+    }
+
+    100% {
+        transform: translateX(-40px);
+    }
+}
+
+#white-wave-1 {
+    animation-name: nav-bar-white-wave-animation;
+    animation-duration: 6s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-delay: -5s;
+}
+
+#white-wave-2 {
+    animation-name: nav-bar-white-wave-animation;
+    animation-duration: 6s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+    animation-delay: -3.5s;
+}
+
+#white-wave-3 {
+    animation-name: nav-bar-white-wave-animation;
+    animation-duration: 6s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-delay: -1s;
+}
+
+#white-wave-4 {
+    animation-name: nav-bar-white-wave-animation;
+    animation-duration: 6s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.5s;
+}
+
+#white-wave-5 {
+    animation-name: nav-bar-white-wave-animation;
+    animation-duration: 6s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+}
+
+#white-wave-6 {
+    animation-name: nav-bar-white-wave-animation;
+    animation-duration: 6s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-delay: 4.5s;
+}
+
+@keyframes education-out-animation {
+    0% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translate(-100%);
+    }
+}
+
+@keyframes skills-out-animation {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.about-me-front {
+    position: absolute;
+    top: 0;
+
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.about-me-front div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.about-me-front span {
+    margin: auto;
+
+    font-family: font-1;
+    font-size: 3.5rem;
+
+    color: var(--oposite-background-color);
+
+    z-index: 1;
+}
+
+#education {
+    background-image: url(http://www.iespuertadelmar.es/wp-content/uploads/2017/12/ponencia2.jpg);
+
+    animation-duration: 2s;
+    animation-direction: normal;
+    animation-timing-function: ease;
+}
+
+#skills {
+    background-image: url(https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2019/05/visual-studio-online.jpg?itok=JmzraVZM);
+
+    animation-duration: 2s;
+    animation-direction: normal;
+    animation-timing-function: ease;
+}
